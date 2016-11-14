@@ -8,22 +8,22 @@ using System.Threading.Tasks;
 
 namespace MiauBucks.Models
 {
-    public class Expense
+    public class User
     {
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required]
-        public double Value { get; set; }
+        public string FirstName { get; set; }
         [Required]
-        public DateTime Date { get; set; }
-        public int UserId{get; set;}
+        public string LastName { get; set; }
+        public string Email { get; set; }
 
-        public Expense(double value, DateTime date, int userId)
+        public User(string firstName, string lastName, string email)
         {
-            this.Value = value;
-            this.Date = date;
-            this.UserId = userId;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Email = email;
         }
     }
 }

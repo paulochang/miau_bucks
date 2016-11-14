@@ -10,6 +10,7 @@ namespace MiauBucks.Interfaces
     {
         IEnumerable<Expense> All { get; }
         Expense Find(int id);
+        Expense FindByUser(int id);
         void Insert(Expense item);
         void Update(Expense item);
         void Delete(int id);

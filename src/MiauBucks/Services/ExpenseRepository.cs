@@ -20,9 +20,9 @@ namespace MiauBucks.Services
         {
             _expenseList = new List<Expense>();
 
-            var expense1 = new Expense(1, 100, new DateTime(2016, 1, 1));
-            var expense2 = new Expense(2, 200, new DateTime(2016, 1, 1));
-            var expense3 = new Expense(3, 200, new DateTime(2016, 1, 1));
+            var expense1 = new Expense(100, new DateTime(2016, 1, 1),1);
+            var expense2 = new Expense(200, new DateTime(2016, 1, 1),1);
+            var expense3 = new Expense(200, new DateTime(2016, 1, 1),2);
 
             _expenseList.Add(expense1);
             _expenseList.Add(expense2);
@@ -45,6 +45,11 @@ namespace MiauBucks.Services
         public Expense Find(int id)
         {
             return _expenseList.FirstOrDefault(item => item.Id == id);
+        }
+
+        public Expense FindByUser(int userId)
+        {
+            return _expenseList.FirstOrDefault(item => item.UserId == userId);
         }
 
         public void Insert(Expense item)
